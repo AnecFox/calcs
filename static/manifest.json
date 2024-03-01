@@ -2,7 +2,6 @@
 	"name": "Calculators By AnecFox",
 	"short_name": "Calcs",
 	"description": "Some calculators",
-	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#565656",
 	"theme_color": "#565656",
