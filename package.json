@@ -1,0 +1,44 @@
+{
+	"name": "anecfox-calcs",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.4.2",
+		"@fortawesome/free-brands-svg-icons": "^6.4.2",
+		"@fortawesome/free-solid-svg-icons": "^6.4.2",
+		"@fortawesome/svelte-fontawesome": "^0.2.0",
+		"@sveltejs/adapter-auto": "^2.1.0",
+		"@sveltejs/adapter-static": "^3.0.1",
+		"@sveltejs/kit": "^1.22.6",
+		"@typescript-eslint/eslint-plugin": "^5.62.0",
+		"@typescript-eslint/parser": "^5.62.0",
+		"autoprefixer": "^10.4.15",
+		"eslint": "^8.47.0",
+		"eslint-config-prettier": "^8.10.0",
+		"eslint-plugin-svelte": "^2.32.4",
+		"postcss": "^8.4.33",
+		"prettier": "^2.8.8",
+		"prettier-plugin-svelte": "^2.10.1",
+		"sass": "^1.65.1",
+		"svelte": "^4.2.9",
+		"svelte-check": "^3.5.0",
+		"tailwindcss": "^3.3.3",
+		"tslib": "^2.6.1",
+		"typescript": "^5.1.6",
+		"vite": "^4.5.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"ky": "^0.33.3",
+		"svelte-i18n": "^3.7.0"
+	}
+}

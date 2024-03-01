@@ -1,0 +1,19 @@
+<svg width="238" height="238" viewBox="0 0 238 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="18" y="110" width="110" height="110" fill="#FFBABB"/>
+<rect x="128" width="110" height="110" fill="#FF8685"/>
+<rect x="18" width="110" height="110" fill="#FF8685"/>
+<rect x="18" width="110" height="110" fill="#FF8685"/>
+<rect x="128" width="110" height="110" fill="#FF8685"/>
+<rect x="18" y="110" width="110" height="110" fill="#FFBABB"/>
+<rect y="128" width="110" height="110" fill="#FF8685"/>
+<rect x="128" y="110" width="110" height="110" fill="#FF8685"/>
+<line x1="158" y1="175" x2="208" y2="175" stroke="white" stroke-width="10"/>
+<line x1="208" y1="155" x2="158" y2="155" stroke="white" stroke-width="10"/>
+<line x1="48" y1="55" x2="98" y2="55" stroke="white" stroke-width="10"/>
+<line x1="158" y1="55" x2="208" y2="55" stroke="white" stroke-width="10"/>
+<line x1="73" y1="80" x2="73" y2="30" stroke="white" stroke-width="10"/>
+<rect x="31" y="170.16" width="30" height="10" fill="white"/>
+<path d="M79 180.16H61L61 165L79 180.16Z" fill="white"/>
+<rect x="79" y="196.5" width="30" height="10" transform="rotate(-180 79 196.5)" fill="white"/>
+<path d="M31 186.5H49L49 201.84L31 186.5Z" fill="white"/>
+</svg>

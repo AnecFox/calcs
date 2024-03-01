@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+	font-size: 2.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+input {
+	font-size: 2.5rem;
+}
+
+:root {
+	@apply text-dark bg-white transition-colors duration-300 ease-out;
+}
+
+:root.dark {
+	@apply bg-darker text-light;
+}
+
+.control {
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	padding: 0.4rem;
+	@apply bg-light-element dark:bg-dark-element;
+}
+
+@media screen and (orientation: portrait) {
+	html,
+	body,
+	.wrapper {
+		height: 70dvh;
+	}
+
+	.wrapper {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+}
