@@ -2,11 +2,12 @@ import { browser } from '$app/environment';
 import { fallbackLocale, locales } from '$lib/locale/i10n';
 import { _, addMessages, dictionary, getLocaleFromNavigator, init, locale } from 'svelte-i18n';
 import { derived, get, writable } from 'svelte/store';
+import { base } from '$app/paths';
 
 let _activeLocale: string;
 const isDownloading = writable(false);
 
-const MESSAGE_FILE_URL_TEMPLATE = '/lang/{locale}.json';
+const MESSAGE_FILE_URL_TEMPLATE = `${base}/lang/{locale}.json`;
 
 function setupI18n(options: { withLocale?: string }) {
 	let savedLocale = null;
