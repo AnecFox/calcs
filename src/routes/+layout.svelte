@@ -6,6 +6,7 @@
 	import '../app.css';
 	import { theme } from '../store';
 	import { direction, isLocaleLoaded } from '$lib/locale/i18n';
+	import { base } from '$app/paths';
 
 	$: if (browser && document.dir !== $direction) {
 		document.dir = $direction;
@@ -21,6 +22,12 @@
 		}
 	});
 </script>
+
+<svelte:head>
+	<link href="{base}/favicon.png" rel="icon" />
+	<link href="{base}/favicon.png" rel="apple-touch-icon" />
+	<link href="{base}/manifest.json" rel="manifest" />
+</svelte:head>
 
 {#if $isLocaleLoaded}
 	<Header />
