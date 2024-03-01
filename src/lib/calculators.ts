@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import { base } from '$app/paths';
 
 export interface ICalculator {
 	icon: string;
@@ -16,7 +17,7 @@ export const calculators = writable<ICalculator[]>([
 		icon: '/images/calc-icons/TimeIcon.svg',
 		name: '',
 		localeKey: 'timecalc',
-		url: '/timecalc',
+		url: `${base}/timecalc`,
 		backgroundColor: '#b0e0f9',
 		backgroundColorDark: '#2b5377',
 		textColor: '#3378ab',
@@ -26,7 +27,7 @@ export const calculators = writable<ICalculator[]>([
 		icon: '/images/calc-icons/CurrencyIcon.svg',
 		name: '',
 		localeKey: 'currency_converter',
-		url: '/currency-converter',
+		url: `${base}/currency-converter`,
 		backgroundColor: '#f9e4c5',
 		backgroundColorDark: '#78562e',
 		textColor: '#b8781f',
@@ -36,7 +37,7 @@ export const calculators = writable<ICalculator[]>([
 		icon: '/images/calc-icons/DistanceIcon.svg',
 		name: '',
 		localeKey: 'distance_converter',
-		url: '/distance-converter',
+		url: `${base}/distance-converter`,
 		backgroundColor: '#fad7d8',
 		backgroundColorDark: '#7e3e3e',
 		textColor: '#c95453',
@@ -46,7 +47,7 @@ export const calculators = writable<ICalculator[]>([
 		icon: '/images/calc-icons/SpeedIcon.svg',
 		name: '',
 		localeKey: 'speed_converter',
-		url: '/speed-converter',
+		url: `${base}/speed-converter`,
 		backgroundColor: '#a6f0c3',
 		backgroundColorDark: '#315e43',
 		textColor: '#35a15f',
