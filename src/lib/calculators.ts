@@ -13,7 +13,7 @@ export interface ICalculator {
 
 export const calculators = writable<ICalculator[]>([
 	{
-		icon: '/images/calc-icons/TimeIcon.svg',
+		icon: 'images/calc-icons/TimeIcon.svg',
 		name: '',
 		localeKey: 'timecalc',
 		url: 'timecalc',
@@ -23,7 +23,7 @@ export const calculators = writable<ICalculator[]>([
 		textColorDark: '#d6f2ff'
 	},
 	{
-		icon: '/images/calc-icons/CurrencyIcon.svg',
+		icon: 'images/calc-icons/CurrencyIcon.svg',
 		name: '',
 		localeKey: 'currency_converter',
 		url: 'currency-converter',
@@ -33,7 +33,7 @@ export const calculators = writable<ICalculator[]>([
 		textColorDark: '#fff6d6'
 	},
 	{
-		icon: '/images/calc-icons/DistanceIcon.svg',
+		icon: 'images/calc-icons/DistanceIcon.svg',
 		name: '',
 		localeKey: 'distance_converter',
 		url: 'distance-converter',
@@ -43,7 +43,7 @@ export const calculators = writable<ICalculator[]>([
 		textColorDark: '#ffe8e8'
 	},
 	{
-		icon: '/images/calc-icons/SpeedIcon.svg',
+		icon: 'images/calc-icons/SpeedIcon.svg',
 		name: '',
 		localeKey: 'speed_converter',
 		url: 'speed-converter',

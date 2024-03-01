@@ -34,11 +34,11 @@
 <a href="{base}/{url}">
 	{#if isDark}
 		<div class="item" style="color: {textColorDark}; background-color: {backgroundColorDark};">
-			<CalculatorItemContent {icon} {name} />
+			<CalculatorItemContent icon="{base}/{icon}" {name} />
 		</div>
 	{:else}
 		<div class="item" style="color: {textColor}; background-color: {backgroundColor};">
-			<CalculatorItemContent {icon} {name} />
+			<CalculatorItemContent icon="{base}/{icon}" {name} />
 		</div>
 	{/if}
 </a>

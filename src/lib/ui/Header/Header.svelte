@@ -56,7 +56,7 @@
 			{#each $calculators as calculator}
 				<li class="item">
 					<a href="{base}/{calculator.url}" class="item__content flex items-center">
-						<img class="w-8 h-8 me-2" src={calculator.icon} alt="" />
+						<img class="w-8 h-8 me-2" src="{base}/{calculator.icon}" alt="" />
 						{calculator.name}
 					</a>
 				</li>
