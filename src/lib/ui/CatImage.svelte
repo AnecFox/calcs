@@ -1,8 +1,9 @@
 <script>
 	import { _ } from 'svelte-i18n';
+	import { base } from '$app/paths';
 </script>
 
-<img alt={$_('cat_alt_text')} class="meow" src="/images/cat.jpg" />
+<img alt={$_('cat_alt_text')} class="meow" src="{base}/images/cat.jpg" />
 
 <style>
 	.meow {
