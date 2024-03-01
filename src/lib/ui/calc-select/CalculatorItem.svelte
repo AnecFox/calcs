@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { theme } from '../../../store';
 	import CalculatorItemContent from './CalculatorItemContent.svelte';
+	import { base } from '$app/paths';
 
 	let isDark: boolean = isDarkTheme($theme);
 
@@ -30,7 +31,7 @@
 	const updateThemeIsDark = () => (isDark = isDarkTheme($theme));
 </script>
 
-<a href={url}>
+<a href="{base}/{url}">
 	{#if isDark}
 		<div class="item" style="color: {textColorDark}; background-color: {backgroundColorDark};">
 			<CalculatorItemContent {icon} {name} />

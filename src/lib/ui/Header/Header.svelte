@@ -7,6 +7,7 @@
 	import { _ } from 'svelte-i18n';
 	import HeaderButtons from './HeaderButtons.svelte';
 	import { calculators } from '$lib/calculators';
+	import { base } from '$app/paths';
 
 	library.add(faBars, faXmark);
 
@@ -51,10 +52,10 @@
 		</span>
 
 		<ul class="nav-list list-none flex justify-start items-center">
-			<li><a class="item" href="/">{$_('header.navbar.homepage')}</a></li>
+			<li><a class="item" href="{base}/">{$_('header.navbar.homepage')}</a></li>
 			{#each $calculators as calculator}
 				<li class="item">
-					<a href={calculator.url} class="item__content flex items-center">
+					<a href="{base}/{calculator.url}" class="item__content flex items-center">
 						<img class="w-8 h-8 me-2" src={calculator.icon} alt="" />
 						{calculator.name}
 					</a>
