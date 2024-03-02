@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { library } from '@fortawesome/fontawesome-svg-core';
-	import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+	import { faBars, faHouse, faXmark } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { onMount } from 'svelte';
 	import { _ } from 'svelte-i18n';
@@ -9,7 +9,7 @@
 	import { calculators } from '$lib/calculators';
 	import { base } from '$app/paths';
 
-	library.add(faBars, faXmark);
+	library.add(faBars, faXmark, faHouse);
 
 	let isMenuActive = false;
 
@@ -52,7 +52,12 @@
 		</span>
 
 		<ul class="nav-list list-none flex justify-start items-center">
-			<li><a class="item" href="{base}/">{$_('header.navbar.homepage')}</a></li>
+			<li>
+				<a class="item flex" href="{base}/">
+					<span class="me-1"><FontAwesomeIcon icon={faHouse} size="lg" /></span>
+					{$_('header.navbar.homepage')}
+				</a>
+			</li>
 			{#each $calculators as calculator}
 				<li class="item">
 					<a href="{base}/{calculator.url}" class="item__content flex items-center">
