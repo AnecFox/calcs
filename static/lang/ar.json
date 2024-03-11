@@ -11,8 +11,7 @@
 			"system": "نظام التشغيل",
 			"light": "فاتح",
 			"dark": "داكن"
-		},
-		"language_button_aria_label": "تغيير اللغة"
+		}
 	},
 	"not_found_error_message": "لم تتمكن القطة من العثور على الصفحة الصحيحة \uD83D\uDE40",
 	"server_error_message": "غلط بالكود \uD83D\uDE40",

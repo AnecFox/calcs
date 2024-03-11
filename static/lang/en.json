@@ -10,8 +10,7 @@
 			"system": "system",
 			"light": "light",
 			"dark": "dark"
-		},
-		"language_button_aria_label": "Change language"
+		}
 	},
 	"not_found_error_message": "Kitten couldn't find the right page \uD83D\uDE40",
 	"server_error_message": "Bug in the code \uD83D\uDE40",

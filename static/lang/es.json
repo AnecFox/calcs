@@ -10,8 +10,7 @@
 			"system": "el sistema",
 			"light": "claro",
 			"dark": "oscuro"
-		},
-		"language_button_aria_label": "Cambiar el idioma"
+		}
 	},
 	"not_found_error_message": "El gatito no encontraba la página correcta \uD83D\uDE40",
 	"server_error_message": "Error en el código \uD83D\uDE40",

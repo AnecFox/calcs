@@ -10,8 +10,7 @@
 			"system": "システム",
 			"light": "ライト",
 			"dark": "ダーク"
-		},
-		"language_button_aria_label": "言語の変更"
+		}
 	},
 	"not_found_error_message": "猫は正しいページを見つけることができませんでした\uD83D\uDE40",
 	"server_error_message": "コードのバグ\uD83D\uDE40",

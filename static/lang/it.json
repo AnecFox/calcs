@@ -10,8 +10,7 @@
 			"system": "corrente è quello del sistema",
 			"light": "attuale è chiaro",
 			"dark": "attuale è scuro"
-		},
-		"language_button_aria_label": "Cambiare la lingua"
+		}
 	},
 	"not_found_error_message": "Il gattino non riusciva a trovare la pagina giusta \uD83D\uDE40",
 	"server_error_message": "Bug nel codice \uD83D\uDE40",
