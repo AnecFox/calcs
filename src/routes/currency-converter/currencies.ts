@@ -39,6 +39,7 @@ export const currencies = writable<ICurrency[]>([
 	{ id: 'KZT' },
 	{ id: 'LBP' },
 	{ id: 'MDL' },
+	{ id: 'MKD' },
 	{ id: 'MNT' },
 	{ id: 'MXN' },
 	{ id: 'NGN' },
