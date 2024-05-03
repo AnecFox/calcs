@@ -1,10 +1,9 @@
 <script>
 	import { browser } from '$app/environment';
 	import Header from '$lib/ui/Header/Header.svelte';
-	import { applyTheme } from '$lib/theme';
+	import { applyTheme, theme } from '$lib/theme';
 	import { onMount } from 'svelte';
 	import '../app.css';
-	import { theme } from '../store';
 	import { direction, isLocaleLoaded } from '$lib/locale/i18n';
 	import { base } from '$app/paths';
 

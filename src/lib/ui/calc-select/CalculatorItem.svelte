@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { isDarkTheme } from '$lib/theme';
+	import { isDarkTheme, theme } from '$lib/theme';
 	import { onMount } from 'svelte';
-	import { theme } from '../../../store';
 	import CalculatorItemContent from './CalculatorItemContent.svelte';
 	import { base } from '$app/paths';
 

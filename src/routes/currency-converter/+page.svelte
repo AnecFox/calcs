@@ -3,7 +3,8 @@
 	import CatImage from '$lib/ui/CatImage.svelte';
 	import NumberInput from '$lib/ui/NumberInput.svelte';
 	import ResetButton from '$lib/ui/ResetButton.svelte';
-	import { convertArabicToRegularNumbers, getNumber, saveData } from '$lib/utils';
+	import { convertArabicToRegularNumbers, getNumber } from '$lib/locale/lang-utils';
+	import { saveData } from '$lib/utils';
 	import { library } from '@fortawesome/fontawesome-svg-core';
 	import { faRotate, faSpinner } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';

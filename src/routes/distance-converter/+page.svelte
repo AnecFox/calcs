@@ -2,12 +2,8 @@
 	import { _, locale } from '$lib/locale/i18n';
 	import NumberInput from '$lib/ui/NumberInput.svelte';
 	import ResetButton from '$lib/ui/ResetButton.svelte';
-	import {
-		convertArabicToRegularNumbers,
-		getElementOfCollectionById,
-		getNumber,
-		saveData
-	} from '$lib/utils';
+	import { convertArabicToRegularNumbers, getNumber } from '$lib/locale/lang-utils';
+	import { getElementOfCollectionById, saveData } from '$lib/utils';
 	import { library } from '@fortawesome/fontawesome-svg-core';
 	import { faRotate } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';

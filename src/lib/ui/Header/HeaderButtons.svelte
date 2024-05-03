@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { locales } from '$lib/locale/i10n';
 	import { language, locale } from '$lib/locale/i18n';
-	import { applyTheme } from '$lib/theme';
+	import { applyTheme, theme } from '$lib/theme';
 	import { library } from '@fortawesome/fontawesome-svg-core';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 	import { faCircleHalfStroke, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { onMount } from 'svelte';
 	import { _, getLocaleFromNavigator } from 'svelte-i18n';
-	import { theme } from '../../../store';
 
 	library.add(faSun, faMoon, faCircleHalfStroke, faGithub);
 

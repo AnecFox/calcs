@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { getNumber, saveData, selectWordForNumber } from '$lib/utils';
+	import { saveData } from '$lib/utils';
+	import { getNumber, selectWordForNumber } from '$lib/locale/lang-utils';
 	import { _, locale } from '$lib/locale/i18n';
 	import ResetButton from '$lib/ui/ResetButton.svelte';
 
