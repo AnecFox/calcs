@@ -46,6 +46,8 @@
 			localStorage.getItem(LOCALSTORAGE_DATA_KEY) ?? '{}'
 		);
 
+		console.log(savedData);
+
 		if (savedData.value && savedData.fromUnit && savedData.toUnit) {
 			value = getNumber(savedData.value);
 			fromUnit = <IDistanceUnit>(
@@ -70,8 +72,8 @@
 
 			saveData(LOCALSTORAGE_DATA_KEY, {
 				value: +convertArabicToRegularNumbers(value).replace(',', '.'),
-				fromCurrency: fromUnit.id,
-				toCurrency: toUnit.id
+				fromUnit: fromUnit.id,
+				toUnit: toUnit.id
 			});
 		} else {
 			resultString = $_('message_about_entering_numbers');
