@@ -46,8 +46,6 @@
 			localStorage.getItem(LOCALSTORAGE_DATA_KEY) ?? '{}'
 		);
 
-		console.log(savedData);
-
 		if (savedData.value && savedData.fromUnit && savedData.toUnit) {
 			value = getNumber(savedData.value);
 			fromUnit = <IDistanceUnit>(
