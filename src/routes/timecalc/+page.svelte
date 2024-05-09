@@ -55,23 +55,28 @@
 			$_('timecalc.minute_word_3')
 		];
 
-		const hourWord: string = selectWordForNumber(hours, hourWords, $locale === 'ru');
-		const minuteWord: string = selectWordForNumber(minutes, minuteWords, $locale === 'ru');
+		const hourWord: string = selectWordForNumber(hours, hourWords, $locale ?? 'en');
+		const minuteWord: string = selectWordForNumber(minutes, minuteWords, $locale ?? 'en');
 
 		if (hours !== 0 && minutes !== 0) {
-			result = `${hours} ${hourWord}${$_(
+			// isArabicAndTwo for not displaying the number in Arabic if the number is 2
+			result = `${isArabicAndTwo(hours) ? '' : hours + ' '}${hourWord}${$_(
 				'timecalc.result_separator'
-			)}${minutes} ${minuteWord}`;
+			)}${isArabicAndTwo(minutes) ? '' : minutes + ' '}${minuteWord}`;
 		} else {
 			result =
-				(hours === 0 ? '' : `${hours} ${hourWord} `) +
-				(minutes === 0 && hours !== 0 ? '' : `${minutes} ${minuteWord}`);
+				(hours === 0 ? '' : `${isArabicAndTwo(hours) ? '' : hours + ' '}${hourWord} `) +
+				(minutes === 0 && hours !== 0
+					? ''
+					: `${isArabicAndTwo(minutes) ? '' : minutes + ' '} ${minuteWord}`);
 		}
 
 		resultString = `${$_('result')}: ${getNumber(result)}`;
 
 		saveData(LOCALSTORAGE_DATA_KEY, { firstTime, secondTime });
 	}
+
+	const isArabicAndTwo = (number: number) => $locale === 'ar' && number === 2;
 
 	function resetSelectedTime() {
 		firstTime = defaultTime;
