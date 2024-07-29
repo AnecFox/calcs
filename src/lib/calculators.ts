@@ -47,8 +47,8 @@ export const calculators = writable<ICalculator[]>([
 		name: '',
 		localeKey: 'speed_converter',
 		url: 'speed-converter',
-		backgroundColor: '#a6f0c3',
-		backgroundColorDark: '#315e43',
+		backgroundColor: '#bdedcc',
+		backgroundColorDark: '#2e593f',
 		textColor: '#35a15f',
 		textColorDark: '#d1f4df'
 	}
