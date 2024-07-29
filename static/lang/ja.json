@@ -16,9 +16,9 @@
 	"server_error_message": "コードのバグ\uD83D\uDE40",
 	"meow": "にゃー",
 	"cat_alt_text": "猫",
-	"loading": "ダウンロード",
+	"loading": "ローディング",
 	"timecalc": {
-		"name": "時間算出",
+		"name": "タイム・カルキュレーター",
 		"from_time": "から",
 		"to_time": "まで",
 		"hour_word_1": "時間",
@@ -31,7 +31,7 @@
 		"result_separator": " "
 	},
 	"currency_converter": {
-		"name": "通貨コンバーター",
+		"name": "カレンシー・コンバーター",
 		"currencies_loading_failed_heading": "すみません、何かがうまくいきませんでした \uD83D\uDE3F",
 		"currencies_loading_failed_message": "後で戻ってみてください \uD83D\uDC31",
 		"reverse_selected_currencies": "選択した通貨をスワップ",
@@ -99,7 +99,7 @@
 		}
 	},
 	"distance_converter": {
-		"name": "距離コンバーター",
+		"name": "ディスタンス・コンバーター",
 		"mm": "ミリ",
 		"cm": "センチメートル",
 		"inch": "インチ",
@@ -125,7 +125,7 @@
 			"mi": "miles"
 		}
 	},
-	"number_word": "数",
+	"number_word": "ナンバー",
 	"message_about_entering_numbers": "番号を入力してください。",
 	"reset_button": "をリセット",
 	"result": "結果"
