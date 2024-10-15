@@ -7,14 +7,14 @@
 			"close_menu": "إغلاق القائمة"
 		},
 		"theme": {
-			"button_aria_label": "تغيير المظهر. المظهر {theme}، انقر لتبديل المظهر",
+			"button_aria_label": "تغيّر المظهر. المظهر {theme}، انقر لتبديل المظهر",
 			"system": "نظام التشغيل",
 			"light": "فاتح",
 			"dark": "داكن"
 		}
 	},
 	"not_found_error_message": "لم تتمكن القطة من العثور على الصفحة الصحيحة \uD83D\uDE40",
-	"server_error_message": "غلط بالكود \uD83D\uDE40",
+	"server_error_message": "خطأ في الكود \uD83D\uDE40",
 	"meow": "مياو",
 	"cat_alt_text": "قطة",
 	"loading": "لحظة",
@@ -23,10 +23,10 @@
 		"from_time": "من",
 		"to_time": "إلى",
 		"hour_word_1": "ساعة",
-		"hour_word_2": "ساعتين",
+		"hour_word_2": "ساعتان",
 		"hour_word_3": "ساعات",
 		"minute_word_1": "دقيقة",
-		"minute_word_2": "دقيقتين",
+		"minute_word_2": "دقيقتان",
 		"minute_word_3": "دقائق",
 		"time_not_selected": "الوقت لم يتم اختياره",
 		"result_separator": " و"
@@ -129,5 +129,5 @@
 	"number_word": "رقم",
 	"message_about_entering_numbers": "عليك إدخال رقم هنا",
 	"reset_button": "إعادة تعيين",
-	"result": "نتيجة"
+	"result": "النتيجة"
 }
