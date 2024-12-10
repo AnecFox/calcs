@@ -21,14 +21,31 @@
 		"name": "Калькулятор Времени",
 		"from_time": "От",
 		"to_time": "До",
-		"hour_word_1": "час",
-		"hour_word_2": "часа",
-		"hour_word_3": "часов",
-		"minute_word_1": "минута",
-		"minute_word_2": "минуты",
-		"minute_word_3": "минут",
-		"time_not_selected": "Время не выбрано",
-		"result_separator": ", "
+		"hour_mode": {
+			"hour_word_1": "час",
+			"hour_word_2": "часа",
+			"hour_word_3": "часов",
+			"minute_word_1": "минута",
+			"minute_word_2": "минуты",
+			"minute_word_3": "минут",
+			"result_separator": ", ",
+			"time_not_selected": "Время не выбрано"
+		},
+		"date_mode": {
+			"mode_name": "Режим с датами",
+			"bce": "до н. э.",
+			"ce": "н. э.",
+			"year_word_1": "год",
+			"year_word_2": "года",
+			"year_word_3": "лет",
+			"month_word_1": "месяц",
+			"month_word_2": "месяца",
+			"month_word_3": "месяцев",
+			"day_word_1": "день",
+			"day_word_2": "дня",
+			"day_word_3": "дней",
+			"date_not_selected": "Дата не выбрана"
+		}
 	},
 	"currency_converter": {
 		"name": "Конвертер Валют",

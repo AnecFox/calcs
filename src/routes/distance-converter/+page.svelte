@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { _, locale } from '$lib/locale/i18n';
+	import {
+		convertArabicToRegularNumbers,
+		replaceNumbersDependsLocale
+	} from '$lib/locale/lang-utils';
 	import NumberInput from '$lib/ui/NumberInput.svelte';
 	import ResetButton from '$lib/ui/ResetButton.svelte';
-	import { convertArabicToRegularNumbers, getNumber } from '$lib/locale/lang-utils';
+	import Select from '$lib/ui/Select.svelte';
 	import { getElementOfCollectionById, saveData } from '$lib/utils';
 	import { library } from '@fortawesome/fontawesome-svg-core';
 	import { faRotate } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +14,6 @@
 	import { onMount } from 'svelte';
 	import type { IDistanceUnit } from './distances';
 	import { distanceUnits } from './distances';
-	import Select from '$lib/ui/Select.svelte';
 
 	library.add(faRotate);
 
@@ -30,15 +33,13 @@
 	let result: number;
 	let resultString: string;
 
-	let isSavedDataLoaded = false;
-
 	locale.subscribe(() => {
 		for (const unit of $distanceUnits) {
 			unit.name = $_(`distance_converter.${unit.id}`);
 		}
 		$distanceUnits = $distanceUnits;
 
-		value = getNumber(value);
+		value = replaceNumbersDependsLocale(value);
 	});
 
 	onMount(() => {
@@ -47,7 +48,7 @@
 		);
 
 		if (savedData.value && savedData.fromUnit && savedData.toUnit) {
-			value = getNumber(savedData.value);
+			value = replaceNumbersDependsLocale(savedData.value);
 			fromUnit = <IDistanceUnit>(
 				getElementOfCollectionById(savedData.fromUnit, $distanceUnits)
 			);
@@ -55,18 +56,17 @@
 		} else {
 			resetSelectedValues();
 		}
-		isSavedDataLoaded = true;
 	});
 
-	$: if (isSavedDataLoaded) {
+	$: {
 		let resultValue: number = +convertArabicToRegularNumbers(value).replace(',', '.');
 
 		if (!isNaN(+resultValue)) {
-			resultValue *= fromUnit?.inCM;
-			resultValue /= toUnit?.inCM;
+			resultValue *= fromUnit?.inMeters;
+			resultValue /= toUnit?.inMeters;
 
 			result = +resultValue?.toFixed(5);
-			resultString = `${$_('result')}: ${getNumber(result)}`;
+			resultString = `${$_('result')}: ${replaceNumbersDependsLocale(result)}`;
 
 			saveData(LOCALSTORAGE_DATA_KEY, {
 				value: +convertArabicToRegularNumbers(value).replace(',', '.'),
@@ -79,7 +79,7 @@
 	}
 
 	function resetSelectedValues() {
-		value = getNumber(1);
+		value = replaceNumbersDependsLocale(1);
 		fromUnit = <IDistanceUnit>getElementOfCollectionById('m', $distanceUnits);
 		toUnit = <IDistanceUnit>getElementOfCollectionById('cm', $distanceUnits);
 	}

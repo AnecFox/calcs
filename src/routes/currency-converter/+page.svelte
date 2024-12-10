@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { _, locale } from '$lib/locale/i18n';
+	import {
+		convertArabicToRegularNumbers,
+		replaceNumbersDependsLocale
+	} from '$lib/locale/lang-utils';
 	import CatImage from '$lib/ui/CatImage.svelte';
 	import NumberInput from '$lib/ui/NumberInput.svelte';
 	import ResetButton from '$lib/ui/ResetButton.svelte';
-	import { convertArabicToRegularNumbers, getNumber } from '$lib/locale/lang-utils';
+	import Select from '$lib/ui/Select.svelte';
 	import { saveData } from '$lib/utils';
 	import { library } from '@fortawesome/fontawesome-svg-core';
 	import { faRotate, faSpinner } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +16,6 @@
 	import { onMount } from 'svelte';
 	import type { ICurrency } from './currencies';
 	import { currencies } from './currencies';
-	import Select from '$lib/ui/Select.svelte';
 
 	library.add(faRotate, faSpinner);
 
@@ -48,7 +51,6 @@
 
 	let isLoadingEnded = false;
 	let isGettingCurrenciesHappened = true;
-	let isSavedDataLoaded = false;
 
 	locale.subscribe(() => {
 		for (const currency of $currencies) {
@@ -61,7 +63,7 @@
 		fromCurrency = fromCurrency;
 		toCurrency = toCurrency;
 
-		value = getNumber(value);
+		value = replaceNumbersDependsLocale(value);
 	});
 
 	onMount(async () => {
@@ -84,17 +86,16 @@
 		);
 
 		if (savedData.value && savedData.fromCurrency && savedData.toCurrency) {
-			value = getNumber(savedData.value);
+			value = replaceNumbersDependsLocale(savedData.value);
 			fromCurrency = getCurrencyByCharCode(savedData.fromCurrency);
 			toCurrency = getCurrencyByCharCode(savedData.toCurrency);
 		} else {
 			resetSelectedValues();
 		}
-		isSavedDataLoaded = true;
 	});
 
 	function resetSelectedValues() {
-		value = getNumber(1);
+		value = replaceNumbersDependsLocale(1);
 		fromCurrency = getCurrencyByCharCode('EUR');
 		toCurrency = getCurrencyByCharCode('USD');
 	}
@@ -103,7 +104,7 @@
 		return <ICurrency>$currencies.find((currency) => currency.id === charCode) ?? {};
 	}
 
-	$: if (isSavedDataLoaded) {
+	$: {
 		let resultValue: number = +convertArabicToRegularNumbers(value).replace(',', '.');
 
 		if (!isNaN(+resultValue)) {
@@ -111,7 +112,7 @@
 			resultValue *= toCurrency?.value ?? 0;
 
 			result = +resultValue?.toFixed(5);
-			resultString = `${$_('result')}: ${getNumber(result)}`;
+			resultString = `${$_('result')}: ${replaceNumbersDependsLocale(result)}`;
 
 			saveData(LOCALSTORAGE_DATA_KEY, {
 				value: +convertArabicToRegularNumbers(value).replace(',', '.'),

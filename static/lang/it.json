@@ -21,14 +21,31 @@
 		"name": "Calcolatore di Tempo",
 		"from_time": "Dalle",
 		"to_time": "Fino alle",
-		"hour_word_1": "ora",
-		"hour_word_2": "ore",
-		"hour_word_3": "",
-		"minute_word_1": "minuto",
-		"minute_word_2": "minuti",
-		"minute_word_3": "",
-		"time_not_selected": "La durata non è selezionata",
-		"result_separator": " e "
+		"hour_mode": {
+			"hour_word_1": "ora",
+			"hour_word_2": "ore",
+			"hour_word_3": "",
+			"minute_word_1": "minuto",
+			"minute_word_2": "minuti",
+			"minute_word_3": "",
+			"result_separator": " e ",
+			"time_not_selected": "L'ora non è selezionata"
+		},
+		"date_mode": {
+			"mode_name": "Modalità data",
+			"bce": "a.E.V.",
+			"ce": "E.V.",
+			"year_word_1": "anno",
+			"year_word_2": "anni",
+			"year_word_3": "",
+			"month_word_1": "mese",
+			"month_word_2": "mesi",
+			"month_word_3": "",
+			"day_word_1": "giorno",
+			"day_word_2": "giorni",
+			"day_word_3": "",
+			"date_not_selected": "La data non è selezionata"
+		}
 	},
 	"currency_converter": {
 		"name": "Convertitore di Valuta",

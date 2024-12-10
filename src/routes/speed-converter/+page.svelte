@@ -1,9 +1,13 @@
 <script lang="ts">
+	import { _, locale } from '$lib/locale/i18n';
+	import {
+		convertArabicToRegularNumbers,
+		replaceNumbersDependsLocale
+	} from '$lib/locale/lang-utils';
 	import NumberInput from '$lib/ui/NumberInput.svelte';
 	import ResetButton from '$lib/ui/ResetButton.svelte';
 	import Select from '$lib/ui/Select.svelte';
 	import { getElementOfCollectionById, saveData } from '$lib/utils';
-	import { convertArabicToRegularNumbers, getNumber } from '$lib/locale/lang-utils';
 	import { library } from '@fortawesome/fontawesome-svg-core';
 	import { faRotate } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
@@ -11,7 +15,6 @@
 	import type { IDistanceUnit } from '../distance-converter/distances';
 	import type { ITime } from './speeds';
 	import { distances, times } from './speeds';
-	import { _, locale } from '$lib/locale/i18n';
 
 	library.add(faRotate);
 
@@ -40,8 +43,6 @@
 	let toUnit: IDistanceUnit;
 	let toTime: ITime;
 
-	let isSavedDataLoaded = false;
-
 	locale.subscribe(() => {
 		for (const unit of $distances) {
 			unit.name = $_(`speed_converter.distance_units.${unit.id}`);
@@ -53,7 +54,7 @@
 		}
 		$times = $times;
 
-		value = getNumber(value);
+		value = replaceNumbersDependsLocale(value);
 	});
 
 	onMount(() => {
@@ -68,7 +69,7 @@
 			savedData.to.unit &&
 			savedData.to.time
 		) {
-			value = getNumber(savedData.value);
+			value = replaceNumbersDependsLocale(savedData.value);
 
 			fromUnit = <IDistanceUnit>getElementOfCollectionById(savedData.from.unit, $distances);
 			fromTime = <ITime>getElementOfCollectionById(savedData.from.time, $times);
@@ -78,19 +79,18 @@
 		} else {
 			reset();
 		}
-		isSavedDataLoaded = true;
 	});
 
-	$: if (isSavedDataLoaded) {
+	$: {
 		const adaptedValue = +convertArabicToRegularNumbers(value).replace(',', '.');
 
 		let resultValue =
-			((adaptedValue * (fromUnit?.inCM / 100)) / fromTime?.inSeconds / (toUnit?.inCM / 100)) *
+			((adaptedValue * fromUnit?.inMeters) / fromTime?.inSeconds / toUnit?.inMeters) *
 			toTime?.inSeconds;
 
 		if (!isNaN(resultValue)) {
 			result = +resultValue.toFixed(10);
-			resultString = `${$_('result')}: ${getNumber(result)}`;
+			resultString = `${$_('result')}: ${replaceNumbersDependsLocale(result)}`;
 
 			saveData(LOCALSTORAGE_DATA_KEY, {
 				value: +convertArabicToRegularNumbers(value).replace(',', '.'),
@@ -114,7 +114,7 @@
 	}
 
 	function reset() {
-		value = getNumber(1);
+		value = replaceNumbersDependsLocale(1);
 
 		fromUnit = <IDistanceUnit>getElementOfCollectionById('m', $distances);
 		fromTime = <ITime>getElementOfCollectionById('s', $times);

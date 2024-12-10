@@ -21,14 +21,32 @@
 		"name": "Calculadora de duración",
 		"from_time": "Desde",
 		"to_time": "Hasta",
-		"hour_word_1": "hora",
-		"hour_word_2": "horas",
-		"hour_word_3": "",
-		"minute_word_1": "minuto",
-		"minute_word_2": "minutos",
-		"minute_word_3": "",
-		"time_not_selected": "Duración no seleccionada",
-		"result_separator": " y "
+		"is_bce": "¿Es a. e. c.?",
+		"hour_mode": {
+			"hour_word_1": "hora",
+			"hour_word_2": "horas",
+			"hour_word_3": "",
+			"minute_word_1": "minuto",
+			"minute_word_2": "minutos",
+			"minute_word_3": "",
+			"result_separator": " y ",
+			"time_not_selected": "La hora no seleccionada"
+		},
+		"date_mode": {
+			"mode_name": "Modo de fecha",
+			"bce": "a. e. c.",
+			"ce": "c. e.",
+			"year_word_1": "año",
+			"year_word_2": "años",
+			"year_word_3": "",
+			"month_word_1": "mes",
+			"month_word_2": "meses",
+			"month_word_3": "",
+			"day_word_1": "día",
+			"day_word_2": "días",
+			"day_word_3": "",
+			"date_not_selected": "La fecha no seleccionada"
+		}
 	},
 	"currency_converter": {
 		"name": "Conversor de monedas",

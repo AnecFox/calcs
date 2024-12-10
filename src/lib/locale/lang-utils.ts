@@ -34,21 +34,21 @@ export function selectWordForNumber(
 	}
 }
 
-export function getNumber(num: number | string): string {
+export function replaceNumbersDependsLocale(numberOrStringWithNumbers: number | string): string {
 	if (get(locale) === 'ar') {
-		return convertRegularToArabicNumbers(String(num));
+		return convertRegularToArabicNumbers(String(numberOrStringWithNumbers));
 	} else {
-		return convertArabicToRegularNumbers(String(num));
+		return convertArabicToRegularNumbers(String(numberOrStringWithNumbers));
 	}
 }
 
-export function convertRegularToArabicNumbers(value: string): string {
-	const arabicNumbers = '٠١٢٣٤٥٦٧٨٩،';
-	return String(value).replace(/[0123456789,]/g, (d) => arabicNumbers[+d]);
+function convertRegularToArabicNumbers(value: string): string {
+	const arabicNumbers = '٠١٢٣٤٥٦٧٨٩';
+	return value.replace(/[0123456789]/g, (number) => arabicNumbers[+number]).replaceAll(',', '،');
 }
 
 export function convertArabicToRegularNumbers(value: string): string {
-	return String(value)
+	return value
 		.replace(/٠/g, '0')
 		.replace(/١/g, '1')
 		.replace(/٢/g, '2')

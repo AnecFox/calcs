@@ -22,14 +22,31 @@
 		"name": "حاسبة الوقت",
 		"from_time": "من",
 		"to_time": "إلى",
-		"hour_word_1": "ساعة",
-		"hour_word_2": "ساعتان",
-		"hour_word_3": "ساعات",
-		"minute_word_1": "دقيقة",
-		"minute_word_2": "دقيقتان",
-		"minute_word_3": "دقائق",
-		"time_not_selected": "الوقت لم يتم اختياره",
-		"result_separator": " و"
+		"hour_mode": {
+			"hour_word_1": "ساعة",
+			"hour_word_2": "ساعتان",
+			"hour_word_3": "ساعات",
+			"minute_word_1": "دقيقة",
+			"minute_word_2": "دقيقتان",
+			"minute_word_3": "دقائق",
+			"result_separator": " و",
+			"time_not_selected": "الوقت لم يتم اختياره"
+		},
+		"date_mode": {
+			"mode_name": "وضع التاريخ",
+			"bce": "ق‌م",
+			"ce": "ب‌م",
+			"year_word_1": "سنة",
+			"year_word_2": "سنتان",
+			"year_word_3": "سنوات",
+			"month_word_1": "شهر",
+			"month_word_2": "شهران",
+			"month_word_3": "أشهر",
+			"day_word_1": "يوم",
+			"day_word_2": "يومان",
+			"day_word_3": "أيام",
+			"date_not_selected": "التاريخ لم يتم اختياره"
+		}
 	},
 	"currency_converter": {
 		"name": "محول العملات",

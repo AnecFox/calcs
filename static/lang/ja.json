@@ -21,14 +21,31 @@
 		"name": "タイム・カルキュレーター",
 		"from_time": "から",
 		"to_time": "まで",
-		"hour_word_1": "時間",
-		"hour_word_2": "時間",
-		"hour_word_3": "時間",
-		"minute_word_1": "分",
-		"minute_word_2": "分",
-		"minute_word_3": "分",
-		"time_not_selected": "選択時間なし",
-		"result_separator": " "
+		"hour_mode": {
+			"hour_word_1": "時間",
+			"hour_word_2": "時間",
+			"hour_word_3": "時間",
+			"minute_word_1": "分",
+			"minute_word_2": "分",
+			"minute_word_3": "分",
+			"result_separator": " ",
+			"time_not_selected": "時間が選択されていない"
+		},
+		"date_mode": {
+			"mode_name": "日付モード",
+			"bce": "紀元前",
+			"ce": "西暦",
+			"year_word_1": "年",
+			"year_word_2": "年",
+			"year_word_3": "年",
+			"month_word_1": "ヶ月",
+			"month_word_2": "ヶ月",
+			"month_word_3": "ヶ月",
+			"day_word_1": "日",
+			"day_word_2": "日",
+			"day_word_3": "日",
+			"date_not_selected": "日付が選択されていない"
+		}
 	},
 	"currency_converter": {
 		"name": "カレンシー・コンバーター",
