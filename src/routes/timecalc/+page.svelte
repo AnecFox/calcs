@@ -8,14 +8,14 @@
 	const IS_DATE_MODE_LOCALSTORAGE_KEY = 'isDateModeInTimeCalc';
 
 	let isDateMode = false;
-	let isDateModeLoaded = false;
+	let isInfoAboutDateModeLoaded = false;
 
 	onMount(() => {
 		isDateMode = localStorage.getItem(IS_DATE_MODE_LOCALSTORAGE_KEY) === 'true' ? true : false;
-		isDateModeLoaded = true;
+		isInfoAboutDateModeLoaded = true;
 	});
 
-	$: if (browser && isDateModeLoaded) {
+	$: if (browser && isInfoAboutDateModeLoaded) {
 		localStorage.setItem(IS_DATE_MODE_LOCALSTORAGE_KEY, String(isDateMode));
 	}
 </script>

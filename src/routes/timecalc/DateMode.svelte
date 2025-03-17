@@ -9,8 +9,7 @@
 	import type { IDate, IEra, ISelectedDateModeData } from './timeCalc';
 	import { eras } from './timeCalc';
 
-	// today
-	const DEFAULT_DATE = new Date().toJSON().slice(0, 10);
+	const TODAY = new Date().toJSON().slice(0, 10);
 
 	const LOCALSTORAGE_DATA_KEY = 'timeCalcDateModeData';
 
@@ -89,17 +88,15 @@
 
 		differenceInMonths = differenceInMonths < 0 ? 12 + differenceInMonths : differenceInMonths;
 
-		const dateWithSecondDatePreviousMonthLastDay = new Date(
+		const dateWithLastDayPreviousMonthOfSecondDate = new Date(
 			secondSelectedDate.year,
 			secondSelectedDate.month - 1,
 			0
-		);
-
-		const lastDayOfPreviousSecondDateMonth = dateWithSecondDatePreviousMonthLastDay.getDate();
+		).getDate();
 
 		differenceInDays =
 			differenceInDays < 0
-				? lastDayOfPreviousSecondDateMonth + differenceInDays
+				? dateWithLastDayPreviousMonthOfSecondDate + differenceInDays
 				: differenceInDays;
 
 		const yearWords: string[] = [
@@ -148,7 +145,7 @@
 	}
 
 	function resetSelectedDates() {
-		firstDate = secondDate = DEFAULT_DATE;
+		firstDate = secondDate = TODAY;
 		firstDateEra = secondDateEra = $eras[1];
 	}
 </script>
