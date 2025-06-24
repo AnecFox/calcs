@@ -68,10 +68,11 @@
 				(minutes === 0 && hours !== 0 ? '' : `${minutes} ${minuteWord}`);
 		}
 
-		// removing all numbers two in Arabic
+		result = ' ' + result;
 		result = $locale === 'ar' ? result.replaceAll(' 2 ', ' ') : result;
+		result = $locale === 'ar' ? result.replaceAll(' و2 ', ' و') : result;
 
-		resultString = `${$_('result')}: ${replaceNumbersDependsLocale(result)}`;
+		resultString = `${$_('result')}:${replaceNumbersDependsLocale(result)}`;
 
 		saveData(LOCALSTORAGE_DATA_KEY, { firstTime, secondTime });
 	}

@@ -128,10 +128,12 @@
 		}${differenceInDays === 0 ? '' : `${differenceInDays} ${dayWord}`}`;
 
 		result = result.endsWith(', ') ? result.slice(0, -2) : result;
+		result = ' ' + result;
 		result = $locale === 'ar' ? result.replaceAll(' 2 ', ' ') : result;
-		result = result === '' ? '0' : result;
+		result = $locale === 'ar' ? result.replaceAll(' 2, ', ', ') : result;
+		result = result === ' ' ? '0' : result;
 
-		resultString = `${$_('result')}: ${replaceNumbersDependsLocale(result)}`;
+		resultString = `${$_('result')}:${replaceNumbersDependsLocale(result)}`;
 
 		saveData<ISelectedDateModeData>(LOCALSTORAGE_DATA_KEY, {
 			first: { date: firstDate, isBce: firstDateEra.isBce },
