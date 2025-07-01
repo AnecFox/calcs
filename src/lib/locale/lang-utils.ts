@@ -44,7 +44,7 @@ export function replaceNumbersDependsLocale(numberOrStringWithNumbers: number | 
 
 function convertRegularToArabicNumbers(value: string): string {
 	const arabicNumbers = '٠١٢٣٤٥٦٧٨٩';
-	return value.replace(/[0123456789]/g, (number) => arabicNumbers[+number]).replaceAll(',', '،');
+	return value.replace(/[0123456789]/g, (number) => arabicNumbers[+number]).replaceAll(',', '٫');
 }
 
 export function convertArabicToRegularNumbers(value: string): string {
@@ -59,5 +59,6 @@ export function convertArabicToRegularNumbers(value: string): string {
 		.replace(/٧/g, '7')
 		.replace(/٨/g, '8')
 		.replace(/٩/g, '9')
-		.replace(/،/g, ',');
+		.replace(/،/g, ',')
+		.replace(/٫/g, ',');
 }

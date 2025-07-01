@@ -10,12 +10,13 @@
 <label>
 	<input
 		type="text"
+		inputmode="decimal"
 		{value}
 		placeholder={$_('number_word')}
 		style="width: min(85vw, {width}rem)"
 		on:input={handleInput}
 	/>
-</label>
+</label> 
 
 <style lang="postcss">
 	input {
